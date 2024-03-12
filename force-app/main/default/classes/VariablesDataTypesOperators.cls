@@ -52,9 +52,9 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer subtraction(Integer a, Integer b) {
 
-        Integer difference = a - b;
+        return a - b;
 
-        return difference; // Replace null with the variable you used to store the result
+         // Replace null with the variable you used to store the result
     }
 
     /**
@@ -82,12 +82,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal division(Integer a, Integer b) {
           
-        if(b == 0) {  // check condition first
-            return 0;
-        } else {      
-            Integer quotient = a / b;
-            return quotient; // Replace null with the variable you used to store the result
-        }
+        return (b == 0) ? 0 : (Decimal)a / b;
 
         
     }
@@ -106,14 +101,14 @@ public with sharing class VariablesDataTypesOperators {
         
         Boolean isEven = true;
 
-            if(math.mod(num, 2) == 0) {  //math.mod returns the remainder so if there is a remainder, the number is not even.
-                return isEven;
-            } else {
-                return false; // Replace null with the variable you used to store the result
+        if(Math.mod(num, 2) == 0) {  //math.mod returns the remainder so if there is a remainder, the number is not even.
+            return isEven;
+        } else {
+            return false; // Replace null with the variable you used to store the result
                 
-            }
-            
         }
+            
+    }
         
         
     
@@ -129,11 +124,7 @@ public with sharing class VariablesDataTypesOperators {
         
         Boolean isPositive = true;
 
-        if(num > 0) {
-            return isPositive;
-        } else {
-            return false;
-        }
+        return (num > 0) ? isPositive : false;
     }    
 
 
@@ -368,8 +359,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return A Decimal representing the monthly paycheck.
      */
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
+        Integer numberOfWeeks = 4;
         Decimal weeklyPaycheck = hourlyRate * numberOfHours;
-        Decimal monthlyPaycheck = weeklyPaycheck * 4;
+        Decimal monthlyPaycheck = weeklyPaycheck * numberOfWeeks;
 
         return monthlyPaycheck; // Replace null with the variable you used to store the result
     }
